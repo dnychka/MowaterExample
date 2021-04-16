@@ -1,0 +1,43 @@
+---
+output: "pdf_document"
+editor_options: 
+  chunk_output_type: console
+urlcolor: blue
+fontsize: 12pt
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  comment = "#", fig.height = 3, 
+  cache = FALSE,  collapse = TRUE,
+  error = TRUE
+)
+```
+
+# STA 2300 and MATH398: Introduction to Data Science
+
+## Lecture 
+
+See Chapter 6 at 
+https://happygitwithr.com/install-git.html
+to install git on your laptop. 
+
+library(usethis)
+use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
+
+Set the editor
+
+# Basic steps for using github and an R project
+First log onto github and create a new repository.
+Choose to add a README.md file so it has something in it.
+
+When you are in this repository the URL link is just the
+web address in your browser. 
+E.g. My example looks like 
+
+https://github.com/dnychka/MowaterExample
+
+
+
