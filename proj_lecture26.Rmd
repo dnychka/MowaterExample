@@ -150,7 +150,7 @@ The process of updating a file or files to the git repository involves three ste
 * ![](push-pull-door-graphic.jpg){width=15%}
 Clicking on **pull** will update the sandbox with any new files from the repository. 
 Always **pull** before you **push**. If more than one person is updating the repository it is possible that your sandbox is out of date. E.g. Rachel updates fileA then
-Emily updates fileA. If Rachel now wants to work more on fileA  it is important to have Emily's new copy with her excellent additions. 
+Emily updates fileA. If Rachel now wants to work more on fileA  it is important to have Emily's new copy with her excellent additions. She will have the updated file in her sandbox if she **pulls** before working.  
 
 ## Once you quit R studio
 
