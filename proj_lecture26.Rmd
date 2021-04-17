@@ -1,0 +1,158 @@
+---
+output: "pdf_document"
+editor_options: 
+  chunk_output_type: console
+urlcolor: blue
+fontsize: 12pt
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  comment = "#", fig.height = 3, 
+  cache = FALSE,  collapse = TRUE,
+  error = TRUE
+)
+```
+
+
+# STA 2300 and MATH398: Lecture 26  Using github 
+
+## Getting started
+
+This material was abstracted  from the detailed and excellent tutorial
+by Jenny Bryan (R Studio Black Belt).
+https://happygitwithr.com/
+
+### Set up a github account
+
+Go to https://github.com/ and create your account.
+
+Now install github software on your laptop. See Chapter 6 in the tutorial  
+https://happygitwithr.com/install-git.html
+for details. This may depend on whether you have a PC, Mac or Linux. 
+
+Once github is installed,  Rstudio configure yourlocal github version.
+
+```
+library(usethis)
+use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
+```
+Here the email must be the same as the one you used to create your github account but the user name can be different. 
+
+# Steps for a project backed up by github.
+
+## Create the  new repository
+
+Log onto github and create a new repository 
+and choose to add a README.md file.
+When you are in this repository the URL link is just the web address in your browser. 
+
+E.g. My example looks like: 
+https://github.com/dnychka/MowaterExample
+
+This is publicly accessible so you should be able to use my link and see the repository, download its contents, etc.
+
+### Here are the steps in detail:
+
+* Go to https://github.com and make sure you are logged in.
+
+* Click the green “New repository” button. Or, if you are on your own profile page, click on “Repositories”, then click the green “New” button.
+
+How to fill this in:
+
+- Repository name: Choose wisely!
+
+- Description: At least a sentence what this is for. 
+
+- Public. YES Initialize this repository with a README.
+For everything else, just accept the default.
+
+- Click the big green button “Create repository.”
+
+- Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button.
+
+### You now have a new github reposistory!
+![](105933-004-C83C961A.jpg){width=20%}
+
+You can share the URL, add files to this, recover previous files that were overwritten or removed and delete contents. And like Fort Knox it will also still be there if your laptop meets a disaster. 
+
+# Adding a new project connected to github  in RStudio
+
+The way we will use github is as a way to keep a secure copy of your work in R. Having created the new repository we will now work on the R project side using tools in R studio.
+
+In RStudio, start a new Project:
+
+* File > New Project > Version Control > Git. 
+In “Repository URL”, paste the URL of your new GitHub repository. 
+It will be something like this
+https://github.com/dnychka/MowaterExample
+
+
+* Accept the default project directory name, e.g. myrepo, which coincides with the GitHub repo name.
+
+* Think carefully where you want the project folder to sit. Organize your folders so you can find them later.
+
+* Check  “Open in new session”, as that’s what you’ll usually want in real life.
+
+* Click “Create Project”.
+
+
+
+# The sandbox and the vault
+The use of git for keeping track of files can be very complex, adapting to large software development efforts by many people. Here the key is to manage  different *versions* of the software and that is why git is referred to as a version control system.  For this course and for much of your data science work, howeever, you will just have to use a few core git operations: **commit**, **push**, and **pull**.  These actions move files back aand forth between the remote github repository (your vault)  and your laptop (your sandbox)
+
+Using git  and R is simplified by the handy Git GUI that will appear as a tab in Rstudio when you open up a git-based project. 
+
+# Your vault ![](post_a526_featured.jpg){width=15%}
+
+This is the copy of your Rstudio project folder on gihub and gives access to the current commited version as well as all previous files that have been committed. It is also permanent and secure being backed up through the github facility.
+
+
+
+# Your sandbox ![](ht_BuildaSandbox-hero.jpeg){width=15%}
+
+This is the copy of your Rstudio project on your laptop. You can add, delete, and modify files as you work on analysis and then periodically updtee the git repository with new work.This model is especially useful when several people work on the project. They develop some ideas separately in their sandboxes and when the code or files are ready then  the central git repository is updated.
+
+
+
+The process of updating a file or files to the git repository involves three steps 
+"staging", **committing** and **pushing**
+
+* Only files that been "staged", *committed* and *pushed*
+(**SCPed**) will be appear in the github the repository (the Vault). That means if your laptop crashes before updating you lose your sandbox and its contents.
+
+
+* the R Studio GUI makes this convenient. Just click all the boxes for files to stage, click on **commit** and add a commit message, and then click  on **push**.
+
+* ![](push-pull-door-graphic.jpg){width=15%}
+Clicking on **pull** will update the sandbox with any new files from the repository. 
+Always **pull** before you **push**. If more than one person is updating the repository it is possible that your sandbox is out of date. E.g. Rachel updates fileA then
+Emily updates fileA. If Rachel now wants to work more on fileA  it is important to have Emily's new copy with her excellent additions. 
+
+## Giving others write access to your respository
+
+For others to save files to your repository you need to give them permission. 
+
+Sign on to github and go to the repository page. 
+At the far right of the toolbar  is **Settings**
+
+Settings > Manage Access (in left menu) > Invite Collaborator
+
+Type in the account name of the person to give access and it will send an email invite to them. 
+Once they respond they will have access. 
+
+
+OK that is about it to get started. 
+
+
+
+
+
+
+
+
+
+
+
