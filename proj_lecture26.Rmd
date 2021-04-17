@@ -78,6 +78,12 @@ For everything else, just accept the default.
 
 You can share the URL, add files to this, recover previous files that were overwritten or removed and delete contents. And like Fort Knox it will also still be there if your laptop meets a disaster. 
 
+## Once you quit R studio
+
+To get back into the project folder in a new R studio session to continue work open with 
+
+File> Open Project 
+
 # Adding a new project connected to github  in RStudio
 
 The way we will use github is as a way to keep a secure copy of your work in R. Having created the new repository we will now work on the R project side using tools in R studio.
