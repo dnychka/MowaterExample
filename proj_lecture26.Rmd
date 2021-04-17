@@ -16,34 +16,50 @@ knitr::opts_chunk$set(
 )
 ```
 
-
 # STA 2300 and MATH398: Lecture 26  Using github 
 
-## Getting started
+
+# Getting started
 
 This material was abstracted  from the detailed and excellent tutorial
-by Jenny Bryan (R Studio Black Belt).
+by Jenny Bryan (an R Studio Black Belt).
 https://happygitwithr.com/
 
 ### Set up a github account
 
 Go to https://github.com/ and create your account.
+Remember your user name! It is different from the email you use. 
 
-Now install github software on your laptop. See Chapter 6 in the tutorial  
+### Install  git on your laptop
+
+Now install github software on your laptop this allows your computer to communicate with the github repository. 
+This install will depend on whether you have a PC, Mac or Linux. I found this link helpful for the simplest routes for each system. 
+
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+(In the case of Macs when RStudio was first opened it gave a prompt to download the mac command line tools that includes git. Pretty smart.)
+
+Here are more details (that I actually found a bit too much!): Chapter 6 in the git/R tutorial  
 https://happygitwithr.com/install-git.html
-for details. This may depend on whether you have a PC, Mac or Linux. 
 
-Once github is installed,  Rstudio configure yourlocal github version.
+
+Once github is installed, Rstudio  configure your local github version automatically or give a specific username using the code below.
 
 ```
 library(usethis)
-use_git_config(user.name = "Jane Doe", user.email = "jane@example.org")
+use_git_config(user.name = "Dane Joe", user.email = "jane@example.org")
 ```
-Here the email must be the same as the one you used to create your github account but the user name can be different. 
+Here the email *must* be the same as the one you used to create your github account but the user name can be different. 
 
-# Steps for a project backed up by github.
+# Making an R project folder 
+It is easy to create ordinary R project folders. 
 
-## Create the  new repository
+file > New Project * and dont selecet Version Control*
+
+What we want is a new folder that is also a github
+repository. 
+
+## Create the new repositoryin github
 
 Log onto github and create a new repository 
 and choose to add a README.md file.
@@ -78,11 +94,7 @@ For everything else, just accept the default.
 
 You can share the URL, add files to this, recover previous files that were overwritten or removed and delete contents. And like Fort Knox it will also still be there if your laptop meets a disaster. 
 
-## Once you quit R studio
 
-To get back into the project folder in a new R studio session to continue work open with 
-
-File> Open Project 
 
 # Adding a new project connected to github  in RStudio
 
@@ -137,6 +149,13 @@ Clicking on **pull** will update the sandbox with any new files from the reposit
 Always **pull** before you **push**. If more than one person is updating the repository it is possible that your sandbox is out of date. E.g. Rachel updates fileA then
 Emily updates fileA. If Rachel now wants to work more on fileA  it is important to have Emily's new copy with her excellent additions. 
 
+## Once you quit R studio
+
+To get back into the project folder in a new R studio
+session to continue your work open with 
+
+File> Open Project 
+
 ## Giving others write access to your respository
 
 For others to save files to your repository you need to give them permission. 
@@ -150,7 +169,8 @@ Type in the account name of the person to give access and it will send an email 
 Once they respond they will have access. 
 
 
-OK that is about it to get started. 
+## OK that is about it to get started! 
+
 
 
 
