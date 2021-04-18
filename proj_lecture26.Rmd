@@ -22,17 +22,22 @@ knitr::opts_chunk$set(
 # Getting started
 
 This material was abstracted  from the detailed and excellent tutorial
-by Jenny Bryan (an R Studio Black Belt).
+by Jenny Bryan (an RStudio Black Belt).
 https://happygitwithr.com/
+
+First, some terms:
+
+- *git* is a *program* you can install on your own computer to manage changes to files.
+- *github* is a *website* where you can store code, and it interacts with git.
 
 ### Set up a github account
 
 Go to https://github.com/ and create your account.
 Remember your user name! It is different from the email you use. 
 
-### Install  git on your laptop
+### Install  git on your computer
 
-Now install github software on your laptop this allows your computer to communicate with the github repository. 
+Now install git software on your computer this allows your computer to communicate with the github repository. 
 This install will depend on whether you have a PC, Mac or Linux. I found this link helpful for the simplest routes for each system. 
 
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -43,7 +48,7 @@ Here are more details (that I actually found a bit too much!): Chapter 6 in the 
 https://happygitwithr.com/install-git.html
 
 
-Once github is installed, Rstudio may configure your local github version automatically or you can give a specific username using the code below.
+Once git is installed, RStudio may configure your local github credentials automatically or you can give a specific username using the code below.
 
 Here the email *must* be the same as the one you used to create your github account but the user name can be different.
 
@@ -53,12 +58,13 @@ use_git_config(user.name = "Dane Joe", user.email = "dane@gmail.com")
 ```
 
 # Making an R project folder 
+
 It is easy to create ordinary R project folders. 
 
-file > New Project *but don`t select Version Control*
+File > New Project *but don`t select Version Control*
 
 What we want is a new folder that is also a github
-repository. The *Version Control* option is the code word for this choice. Before you do this, however, there must be a repository on github to link to. 
+repository. The *Version Control* option is the name for this choice. Before you do this, however, there must be a repository on github to link to. 
 
 ## First create the new repository in github
 
@@ -89,30 +95,37 @@ For everything else, just accept the default.
 - Click the big green button “Create repository.”
 
 - Copy the HTTPS clone URL to your clipboard via the green “Clone or Download” button. You will use in RStudio when you create the new project.
+    - Note: if you were previously a github user, and you have set up your
+      account to use SSH keys instead of username/password, then use the "SSH"
+      link that looks like this: `git@github.com:dnychka/MowaterExample.git`. If
+      you don't know what this means, just ignore it and use the link that
+      starts with `https`.
+
 
 ### You now have a new github repository!
+
 ![](105933-004-C83C961A.jpg){width=20%}
 
-You can share the URL, add files to this, recover previous files that were overwritten or removed and delete contents. And like Fort Knox it will also still be there if your laptop meets a disaster. 
+You can share the URL, add files to this, recover previous files that were overwritten or removed and delete contents. And like Fort Knox it will also still be there if your computer meets a disaster. 
 
 
 
-# Adding a new project connected to githubin RStudio
+# Adding a new project connected to github in RStudio
 
-The way we will use github is as a way to keep a secure copy of your work in R. Having created the new git repository we will now work on the R project side using tools in R studio.
+The way we will use github is as a way to keep a secure copy of your work in R. Having created the new git repository we will now work on the R project side using tools in RStudio.
 
 In RStudio, start a new Project:
 
 * File > New Project > Version Control > Git. 
 In “Repository URL”, paste the URL of your new GitHub repository. 
 It will be something like this
-https://github.com/dnychka/MowaterExample
+https://github.com/dnychka/MowaterExample (or: git@github.com:dnychka/MowaterExample.git if you use SSH keys for github)
 
 
 * Accept the default project directory name,
 which coincides with the GitHub repo name.
 
-* Think carefully where you want the project folder to sit. Organize your folders so you can find them later.
+* Think carefully where you want the project folder to be on your computer. Organize your folders so you can find them later.
 
 * Check  “Open in new session”, as that’s what you’ll usually want in real life.
 
@@ -121,19 +134,19 @@ which coincides with the GitHub repo name.
 
 
 # The sandbox and the vault
-The use of git for keeping track of files can be very complex, adapting to large software development efforts by many people. Here the key is to manage  different *versions* of the software and that is why git is referred to as a version control system.  For this course and for much of your data science work, however, you will just have to use a few core git operations: **commit**, **push**, and **pull**.  These actions move files back and forth between the remote github repository (your vault)  and your laptop (your sandbox).
+The use of git for keeping track of files can be very complex, adapting to large software development efforts by many people. Here the key is to manage  different *versions* of the software and that is why git is referred to as a version control system.  For this course and for much of your data science work, however, you will just have to use a few core git operations: **commit**, **push**, and **pull**.  These actions move files back and forth between the remote github repository (your vault)  and your computer (your sandbox). The direction is relative to you and your computer (you push your sandbox changes to github, and pull updates from github to your sandbox).
 
-Using git  and R is simplified by the handy Git GUI that will appear as a tab in Rstudio when you open up a git-based project. 
+Using git and R is simplified by the handy Git GUI that will appear as a tab in RStudio when you open up a git-based project. 
 
 # Your vault ![](post_a526_featured.jpg){width=15%}
 
-This is the copy of your Rstudio project folder on gihub and gives access to the current commited version as well as all previous files that have been committed. It is permanent and secure, being backed up through the github facility.
+This is the copy of your RStudio project folder on github and gives access to the current committed version as well as all previous files that have been committed. It is permanent and secure, being backed up through the github facility.
 
 
 
 # Your sandbox ![](ht_BuildaSandbox-hero.jpeg){width=15%}
 
-This is the copy of your Rstudio project on your laptop. You can add, delete, and modify files as you work on analysis and then periodically update the git repository with new work. This model is especially useful when several people work on the project. They develop some ideas separately in their sandboxes and when the code or files are ready then they update the central git repository.
+This is the copy of your RStudio project on your laptop. You can add, delete, and modify files as you work on analysis and then periodically update the git repository with new work. This model is especially useful when several people work on the project. They develop some ideas separately in their sandboxes and when the code or files are ready then they update the central git repository (the Vault, which lives on github). Then everyone else can get their updates by pulling them from github.
 
 
 The process of updating a file or files to the git repository involves three steps 
@@ -142,24 +155,24 @@ The process of updating a file or files to the git repository involves three ste
 * Only files that been "staged", *committed* and *pushed*
  will be appear in the github the repository (the Vault). 
  
-* If your laptop crashes before updating you lose your the  uncommitted contents in your sandbox. You can always recreate a sandbox from git ( using **pull**) but it will only have the files that have been previously committed. Your more recent uncomitted work is lost. 
+* If your computer crashes before updating you might lose the uncommitted contents in your sandbox. You can always recreate a sandbox from git ( using **pull**) but it will only have the files that have been previously committed. Your more recent uncommitted work is lost. 
 
 
-* the R Studio GUI makes this convenient. Just click all the boxes for files to stage, click on **commit** and add a commit message, and then click  on **push**.
+* The RStudio GUI makes this convenient. Just click all the boxes for files that you want to stage, click on **commit** and add a commit message, and then click  on **push**.
 
 * ![](push-pull-door-graphic.jpg){width=15%}
 Clicking on **pull** will update the sandbox with any new files from the repository. 
 Always **pull** before you **push**. If more than one person is updating the repository it is possible that your sandbox is out of date. E.g. Rachel updates fileA then
-Emily updates fileA. If Rachel now wants to work more on fileA  it is important to have Emily's new copy with her excellent additions. She will have the updated file in her sandbox if she **pulls** before working.  
+Emily updates fileA. If Rachel now wants to work more on fileA  it is important to have Emily's new copy with her excellent additions. 
 
-## Once you quit R studio
+## Once you quit RStudio
 
-To get back into the project folder in a new R studio
+To get back into the project folder in a new RStudio
 session to continue your work open with 
 
-File> Open Project 
+File > Open Project 
 
-## Giving others write access to your respository
+## Giving others write access to your repository
 
 For others to save files to your repository you need to give them permission. 
 
